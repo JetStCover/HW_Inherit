@@ -1,4 +1,5 @@
 package re.netology.Manager.Tasks;
+
 public class Meeting extends Task {
 
     private String topic;

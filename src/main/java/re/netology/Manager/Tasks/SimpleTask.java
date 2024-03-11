@@ -1,4 +1,5 @@
 package re.netology.Manager.Tasks;
+
 public class SimpleTask extends Task {
 
     private String title;

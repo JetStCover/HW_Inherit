@@ -12,6 +12,7 @@ class TaskTest {
         boolean actual = simpleTask.matches("Позвон");
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void falseSimTask() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
@@ -20,8 +21,9 @@ class TaskTest {
         boolean actual = simpleTask.matches("позвон");
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void trueEpicTask(){
+    public void trueEpicTask() {
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(43, subtasks);
 
@@ -32,7 +34,7 @@ class TaskTest {
     }
 
     @Test
-    public void falseEpicTask(){
+    public void falseEpicTask() {
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(43, subtasks);
 
@@ -43,7 +45,7 @@ class TaskTest {
     }
 
     @Test
-    public void trueMeetingTaskTopic(){
+    public void trueMeetingTaskTopic() {
         Meeting meeting = new Meeting(
                 555,
                 "Выкатка 3й версии приложения",
@@ -55,8 +57,9 @@ class TaskTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void trueMeetingTaskProject(){
+    public void trueMeetingTaskProject() {
         Meeting meeting = new Meeting(
                 555,
                 "Выкатка 3й версии приложения",
@@ -68,8 +71,9 @@ class TaskTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void trueMeetingTaskStart(){
+    public void trueMeetingTaskStart() {
         Meeting meeting = new Meeting(
                 555,
                 "Выкатка 3й версии приложения",
@@ -81,6 +85,7 @@ class TaskTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void nonTask() {
         Task task = new Task(1);
