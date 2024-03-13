@@ -127,4 +127,29 @@ public class TodosTest {
         Task[] actual = todos.search("Хлеб");
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void SearchAnyTask() {
+        SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
+
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
+        Epic epic = new Epic(55, subtasks);
+
+        Meeting meeting = new Meeting(
+                555,
+                "Выкатка 3й версии приложения",
+                "Приложение НетоБанка",
+                "Во вторник после обеда"
+        );
+
+        Todos todos = new Todos();
+
+        todos.add(simpleTask);
+        todos.add(epic);
+        todos.add(meeting);
+
+        Task[] expected = {simpleTask, meeting};
+        Task[] actual = todos.search("ни");
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
